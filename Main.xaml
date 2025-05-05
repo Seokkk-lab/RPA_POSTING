@@ -166,7 +166,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <ueab:SequenceX DisplayName="Single Excel Process Scope" sap:VirtualizedContainerService.HintSize="1518.4,33367.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <ueab:SequenceX DisplayName="Single Excel Process Scope" sap:VirtualizedContainerService.HintSize="1518.4,31415.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <ueab:SequenceX.Variables>
       <Variable x:TypeArguments="ue:IWorkbookQuickHandle" Default="[new WorkbookQuickHandle(workbookPath:=&quot;Project_Notebook.xlsx&quot;,visible:=True,autoSave:=False,createNew:=True,readOnly:=False,isWorkspace:=True)]" Name="참고사항" />
       <Variable x:TypeArguments="ui:PasswordCredentials" Name="UNI_자격증명" />
@@ -1119,23 +1119,15 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[Bool_처리필요 = true]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1518.4,29731.2" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[Bool_처리필요 = true]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1518.4,27779.2" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1484.8,29451.2" sap2010:WorkflowViewState.IdRef="Sequence_181">
+        <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1484.8,27499.2" sap2010:WorkflowViewState.IdRef="Sequence_181">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Set Variable Value" sap:VirtualizedContainerService.HintSize="1451.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:Boolean">[Bool_처리필요]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-            </Assign.Value>
-          </Assign>
-          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each TabName" sap:VirtualizedContainerService.HintSize="1451.2,29277.6" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Str_TabList]">
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each TabName" sap:VirtualizedContainerService.HintSize="1451.2,27439.2" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Str_TabList]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:String">
                 <ActivityAction.Argument>
@@ -1146,7 +1138,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1417.6,28851.2" sap2010:WorkflowViewState.IdRef="Sequence_182">
+                <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1417.6,27012.8" sap2010:WorkflowViewState.IdRef="Sequence_182">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1215,20 +1207,21 @@
                       </scg:List>
                     </ui:FilterDataTable.SelectColumns>
                   </ui:FilterDataTable>
-                  <If Condition="[Dt_필요정보.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="1384,25836" sap2010:WorkflowViewState.IdRef="If_18">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1384,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;처리할 항목 수: &quot; + Dt_필요정보.Rows.Count.ToString + &quot;건&quot;]" />
+                  <If Condition="[Dt_필요정보.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="1384,23823.2" sap2010:WorkflowViewState.IdRef="If_18">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1350.4,25576" sap2010:WorkflowViewState.IdRef="Sequence_184">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1350.4,23563.2" sap2010:WorkflowViewState.IdRef="Sequence_184">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[Int_행번호]" DataTable="[Dt_필요정보]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1316.8,25516" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
+                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[Int_행번호]" DataTable="[Dt_필요정보]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1316.8,23503.2" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
@@ -1239,7 +1232,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1283.2,25141.6" sap2010:WorkflowViewState.IdRef="Sequence_186">
+                              <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1283.2,23128.8" sap2010:WorkflowViewState.IdRef="Sequence_186">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="ui:UiElement" Name="Browser_세금계산서" />
                                 </Sequence.Variables>
@@ -1248,276 +1241,123 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <If Condition="[Not String.IsNullOrEmpty(CurrentRow(&quot;RPA 결과&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="1249.6,542.4" sap2010:WorkflowViewState.IdRef="If_23">
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1249.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;행 &quot; + Int_행번호.ToString + &quot; (사업장명: &quot; + CurrentRow(&quot;사업장명&quot;).ToString + &quot;) 처리 시작&quot;]" />
+                                <If Condition="[String.IsNullOrEmpty(CurrentRow(&quot;RPA 결과&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="1249.6,6580" sap2010:WorkflowViewState.IdRef="If_23">
                                   <If.Then>
-                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,282.4" sap2010:WorkflowViewState.IdRef="Sequence_228">
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="803.2,6320" sap2010:WorkflowViewState.IdRef="Sequence_228">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;이미 처리된 항목: &quot; + CurrentRow(&quot;사업장명&quot;).ToString + &quot;. 결과: &quot; + CurrentRow(&quot;RPA 결과&quot;).ToString]" />
-                                      <ui:Continue sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="Continue_2" />
-                                    </Sequence>
-                                  </If.Then>
-                                  <If.Else>
-                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_229">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </Sequence>
-                                  </If.Else>
-                                </If>
-                                <If Condition="[TabName = &quot;세금계산서_변동비&quot;]" sap:VirtualizedContainerService.HintSize="1249.6,7316" sap2010:WorkflowViewState.IdRef="If_19">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <If.Then>
-                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="736,7056" sap2010:WorkflowViewState.IdRef="Sequence_187">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="702.4,5211.2" sap2010:WorkflowViewState.IdRef="TryCatch_8">
-                                        <TryCatch.Try>
-                                          <Sequence DisplayName="그룹" sap:VirtualizedContainerService.HintSize="665.6,4948" sap2010:WorkflowViewState.IdRef="Sequence_224">
+                                      <If Condition="[TabName = &quot;세금계산서_변동비&quot;]" sap:VirtualizedContainerService.HintSize="769.6,6260" sap2010:WorkflowViewState.IdRef="If_19">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <If.Then>
+                                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="736,6008.8" sap2010:WorkflowViewState.IdRef="Sequence_187">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="651.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[Str_공급자명 + &quot;검색 시작&quot;]" />
-                                            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="651.2,4736" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="00:00:05">
-                                              <ui:RetryScope.ActivityBody>
-                                                <ActivityAction>
-                                                  <Sequence DisplayName="액션" sap:VirtualizedContainerService.HintSize="609.6,4536.8" sap2010:WorkflowViewState.IdRef="Sequence_223">
-                                                    <sap:WorkflowViewStateService.ViewState>
-                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      </scg:Dictionary>
-                                                    </sap:WorkflowViewStateService.ViewState>
-                                                    <uix:NApplicationCard sap2010:Annotation.AnnotationText="#유니도큐 '세금계산서 정산' 연결 링크 오픈" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: 세금계산서 정산" sap:VirtualizedContainerService.HintSize="595.2,4499.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_37" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" OutUiElement="[Browser_세금계산서]" ScopeGuid="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V2">
-                                                      <uix:NApplicationCard.Body>
-                                                        <ActivityAction x:TypeArguments="x:Object">
-                                                          <ActivityAction.Argument>
-                                                            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                                                          </ActivityAction.Argument>
+                                            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="702.4,5948.8" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+                                              <TryCatch.Try>
+                                                <Sequence DisplayName="그룹" sap:VirtualizedContainerService.HintSize="665.6,5694.4" sap2010:WorkflowViewState.IdRef="Sequence_224">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="651.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[Str_공급자명 + &quot;검색 시작&quot;]" />
+                                                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="651.2,5482.4" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="00:00:05">
+                                                    <ui:RetryScope.ActivityBody>
+                                                      <ActivityAction>
+                                                        <Sequence DisplayName="액션" sap:VirtualizedContainerService.HintSize="609.6,5283.2" sap2010:WorkflowViewState.IdRef="Sequence_223">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="561.6,4228" sap2010:WorkflowViewState.IdRef="Sequence_191">
-                                                            <sap:WorkflowViewStateService.ViewState>
-                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                              </scg:Dictionary>
-                                                            </sap:WorkflowViewStateService.ViewState>
-                                                            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="547.2,122.4" sap2010:WorkflowViewState.IdRef="Delay_18" />
-                                                            <uix:NGoToUrl sap2010:Annotation.AnnotationText="" DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="547.2,145.6" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="https://eacc.spigen.com/unidocu/view.do#UD_0201_010" Version="V4">
-                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                </scg:Dictionary>
-                                                              </sap:WorkflowViewStateService.ViewState>
-                                                            </uix:NGoToUrl>
-                                                            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="547.2,149.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
-                                                              <ui:MultipleAssign.AssignOperations>
-                                                                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
-                                                                    <ui:AssignOperation.To>
-                                                                      <OutArgument x:TypeArguments="x:String">[Str_공급자명]</OutArgument>
-                                                                    </ui:AssignOperation.To>
-                                                                    <ui:AssignOperation.Value>
-                                                                      <InArgument x:TypeArguments="x:String">[CurrentRow("사업장명").ToString]</InArgument>
-                                                                    </ui:AssignOperation.Value>
-                                                                  </ui:AssignOperation>
-                                                                </scg:List>
-                                                              </ui:MultipleAssign.AssignOperations>
-                                                            </ui:MultipleAssign>
-                                                            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="#Data Table의 '사업장명' 정보 입력" ClickBeforeMode="Single" DisplayName="Type Into '공급자명'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="547.2,317.6" sap2010:WorkflowViewState.IdRef="NTypeInto_29" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Text="[Str_공급자명]" Version="V4">
-                                                              <uix:NTypeInto.Target>
-                                                                <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="438, 486, 379, 40" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='' /&gt;" Guid="0d4f3490-ec7e-4869-961e-e02433abe45a" InformativeScreenshot="9f1cdc30e7830cc4640f5ff47f6f07d4.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
-                                                                  <uix:TargetAnchorable.Anchors>
-                                                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                                                      <uix:Target DesignTimeRectangle="285, 485, 151, 42" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='unidocu-th-SU_NAME' type='' tag='TH' class='unidocu-th Uni_InputText' aaname='공급자명' check:innerText='공급자명' /&gt;" Guid="26b1a321-c8f9-4c12-96ee-8eaa85653585" SearchSteps="FuzzySelector" />
-                                                                    </scg:List>
-                                                                  </uix:TargetAnchorable.Anchors>
-                                                                  <uix:TargetAnchorable.PointOffset>
-                                                                    <uix:PointOffset Position="BottomRight" X="-106" Y="-15" />
-                                                                  </uix:TargetAnchorable.PointOffset>
-                                                                </uix:TargetAnchorable>
-                                                              </uix:NTypeInto.Target>
-                                                              <uix:NTypeInto.VerifyOptions>
-                                                                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                                                                  <uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                                    <InArgument x:TypeArguments="x:Boolean" />
-                                                                  </uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                                    <InArgument x:TypeArguments="x:Double" />
-                                                                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                                </uix:VerifyExecutionTypeIntoOptions>
-                                                              </uix:NTypeInto.VerifyOptions>
-                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                </scg:Dictionary>
-                                                              </sap:WorkflowViewStateService.ViewState>
-                                                            </uix:NTypeInto>
-                                                            <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="#'처리담당자' = '부서' 클릭" ClickType="Single" DisplayName="Click '부서'" sap:VirtualizedContainerService.HintSize="547.2,256.8" sap2010:WorkflowViewState.IdRef="NClick_62" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
-                                                              <uix:NClick.Target>
-                                                                <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="530, 452, 21, 21" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='' type='' tag='I' aaname='' /&gt;" Guid="d45d190f-52e2-41d3-8771-900c61976dc2" InformativeScreenshot="6fc512d18b51b3f304f9e0220e05fb54.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='2' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
-                                                                  <uix:TargetAnchorable.Anchors>
-                                                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                                                      <uix:Target DesignTimeRectangle="561, 446, 30, 31" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='부서' type='' tag='SPAN' class='' check:innerText='부서' /&gt;" Guid="0dfcafa8-6ac3-42f4-807d-89d0f8c301fd" SearchSteps="FuzzySelector" />
-                                                                    </scg:List>
-                                                                  </uix:TargetAnchorable.Anchors>
-                                                                </uix:TargetAnchorable>
-                                                              </uix:NClick.Target>
-                                                              <uix:NClick.VerifyOptions>
-                                                                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                                                                  <uix:VerifyExecutionOptions.Retry>
-                                                                    <InArgument x:TypeArguments="x:Boolean" />
-                                                                  </uix:VerifyExecutionOptions.Retry>
-                                                                  <uix:VerifyExecutionOptions.Timeout>
-                                                                    <InArgument x:TypeArguments="x:Double" />
-                                                                  </uix:VerifyExecutionOptions.Timeout>
-                                                                </uix:VerifyExecutionOptions>
-                                                              </uix:NClick.VerifyOptions>
-                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                </scg:Dictionary>
-                                                              </sap:WorkflowViewStateService.ViewState>
-                                                            </uix:NClick>
-                                                            <uix:NClick sap2010:Annotation.AnnotationText="#'검색' 버튼 클릭" ClickType="Single" DisplayName="Click '검색'" sap:VirtualizedContainerService.HintSize="547.2,220.8" sap2010:WorkflowViewState.IdRef="NClick_63" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
-                                                              <uix:NClick.ActivateBefore>
-                                                                <InArgument x:TypeArguments="x:Boolean">
+                                                          <uix:NApplicationCard sap2010:Annotation.AnnotationText="#유니도큐 '세금계산서 정산' 연결 링크 오픈" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: 세금계산서 정산" sap:VirtualizedContainerService.HintSize="595.2,5245.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_37" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" OutUiElement="[Browser_세금계산서]" ScopeGuid="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V2">
+                                                            <uix:NApplicationCard.Body>
+                                                              <ActivityAction x:TypeArguments="x:Object">
+                                                                <ActivityAction.Argument>
+                                                                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                                                </ActivityAction.Argument>
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="561.6,4974.4" sap2010:WorkflowViewState.IdRef="Sequence_191">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <Literal x:TypeArguments="x:Boolean" Value="True">
+                                                                  <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="547.2,122.4" sap2010:WorkflowViewState.IdRef="Delay_18" />
+                                                                  <uix:NGoToUrl sap2010:Annotation.AnnotationText="" DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="547.2,145.6" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="https://eacc.spigen.com/unidocu/view.do#UD_0201_010" Version="V4">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                  </Literal>
-                                                                </InArgument>
-                                                              </uix:NClick.ActivateBefore>
-                                                              <uix:NClick.Target>
-                                                                <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" CVScreenId="c3468fe3-0dd0-4cc3-bd7f-14a34ea333a6" CvElementArea="1800, 354, 106, 37" CvTextArea="1845, 364, 32, 17" CvType="Button" DesignTimeRectangle="1803, 357, 100, 32" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl parentid='search-condition' tag='BUTTON' type='' class='unidocu-button panel-search-button dark_gray' aaname='검색' check:innerText='검색' /&gt;" Guid="4fd28d3e-db97-43bd-9ca2-4da0648dd227" InformativeScreenshot="101fc8b8fc242dcf04e159b2a2cc1459.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='2' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
-                                                                  <uix:TargetAnchorable.CvTextArgument>
-                                                                    <InArgument x:TypeArguments="x:String">
-                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                        </scg:Dictionary>
-                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                      <Literal x:TypeArguments="x:String">
-                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                          </scg:Dictionary>
-                                                                        </sap:WorkflowViewStateService.ViewState>Z4</Literal>
-                                                                    </InArgument>
-                                                                  </uix:TargetAnchorable.CvTextArgument>
-                                                                  <sap:WorkflowViewStateService.ViewState>
-                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                    </scg:Dictionary>
-                                                                  </sap:WorkflowViewStateService.ViewState>
-                                                                </uix:TargetAnchorable>
-                                                              </uix:NClick.Target>
-                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                </scg:Dictionary>
-                                                              </sap:WorkflowViewStateService.ViewState>
-                                                            </uix:NClick>
-                                                            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="547.2,122.4" sap2010:WorkflowViewState.IdRef="Delay_23" />
-                                                            <uix:NGetText sap2010:Annotation.AnnotationText="#row count 값 추출(내역 개수 확인용)" DisplayName="Get Text 'row count' 값 가져오기" sap:VirtualizedContainerService.HintSize="547.2,220.8" sap2010:WorkflowViewState.IdRef="NGetText_17" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" TextString="[Str_RowCount]" Version="V4">
-                                                              <uix:NGetText.Target>
-                                                                <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="1758, 617, 93, 15" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='badge-text' parentid='unidocu-grid-panel' tag='SPAN' type='' /&gt;" Guid="b91886f0-38fd-4dce-9a0f-a1b6ecac2aff" InformativeScreenshot="a9054b5124db7b4c61f88513147959dd.png" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
-                                                                  <uix:TargetAnchorable.ScopeSelectorArgument>
-                                                                    <InArgument x:TypeArguments="x:String">
-                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                        </scg:Dictionary>
-                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                      <Literal x:TypeArguments="x:String">
-                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                          </scg:Dictionary>
-                                                                        </sap:WorkflowViewStateService.ViewState>&lt;html app='chrome.exe' title='SPIGEN UNIDOCU' /&gt;</Literal>
-                                                                    </InArgument>
-                                                                  </uix:TargetAnchorable.ScopeSelectorArgument>
-                                                                  <sap:WorkflowViewStateService.ViewState>
-                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                    </scg:Dictionary>
-                                                                  </sap:WorkflowViewStateService.ViewState>
-                                                                </uix:TargetAnchorable>
-                                                              </uix:NGetText.Target>
-                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                </scg:Dictionary>
-                                                              </sap:WorkflowViewStateService.ViewState>
-                                                            </uix:NGetText>
-                                                            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="547.2,149.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
-                                                              <ui:MultipleAssign.AssignOperations>
-                                                                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
-                                                                    <ui:AssignOperation.To>
-                                                                      <OutArgument x:TypeArguments="x:String">[Str_CountNumber]</OutArgument>
-                                                                    </ui:AssignOperation.To>
-                                                                    <ui:AssignOperation.Value>
-                                                                      <InArgument x:TypeArguments="x:String">[Str_RowCount.Split(" "c)(3)]</InArgument>
-                                                                    </ui:AssignOperation.Value>
-                                                                  </ui:AssignOperation>
-                                                                </scg:List>
-                                                              </ui:MultipleAssign.AssignOperations>
-                                                            </ui:MultipleAssign>
-                                                            <If sap2010:Annotation.AnnotationText="#'처리담당자'의 row count에 따른 항목 변경&#xA;#'부서'를 클릭했는데 0이면, '사업장' 클릭&#xA;#'세금계산서 정산' 페이지의 '처리담당자' 기본값 = '본인'" Condition="[CInt(Str_CountNumber) = 0]" DisplayName="If" sap:VirtualizedContainerService.HintSize="547.2,1990.4" sap2010:WorkflowViewState.IdRef="If_20">
-                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                </scg:Dictionary>
-                                                              </sap:WorkflowViewStateService.ViewState>
-                                                              <If.Then>
-                                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="513.6,1670.4" sap2010:WorkflowViewState.IdRef="Sequence_189">
-                                                                  <sap:WorkflowViewStateService.ViewState>
-                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                    </scg:Dictionary>
-                                                                  </sap:WorkflowViewStateService.ViewState>
-                                                                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="#row count = 0, '처리담당자' = '사업장' 클릭" ClickType="Single" DisplayName="Click '사업장'" sap:VirtualizedContainerService.HintSize="480,256.8" sap2010:WorkflowViewState.IdRef="NClick_64" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
-                                                                    <uix:NClick.Target>
-                                                                      <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="610, 462, 21, 21" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='' type='' tag='I' aaname='' /&gt;" Guid="e6d2ef16-1ad7-4897-ada1-4e23549c20a4" InformativeScreenshot="a2c5d1c40d10dc1f2ed64320934e739d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='2' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                                                                  </uix:NGoToUrl>
+                                                                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="547.2,149.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
+                                                                    <ui:MultipleAssign.AssignOperations>
+                                                                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                                                                          <ui:AssignOperation.To>
+                                                                            <OutArgument x:TypeArguments="x:String">[Str_공급자명]</OutArgument>
+                                                                          </ui:AssignOperation.To>
+                                                                          <ui:AssignOperation.Value>
+                                                                            <InArgument x:TypeArguments="x:String">[CurrentRow("사업장명").ToString]</InArgument>
+                                                                          </ui:AssignOperation.Value>
+                                                                        </ui:AssignOperation>
+                                                                      </scg:List>
+                                                                    </ui:MultipleAssign.AssignOperations>
+                                                                  </ui:MultipleAssign>
+                                                                  <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="#Data Table의 '사업장명' 정보 입력" ClickBeforeMode="Single" DisplayName="Type Into '공급자명'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="547.2,317.6" sap2010:WorkflowViewState.IdRef="NTypeInto_29" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Text="[Str_공급자명]" Version="V4">
+                                                                    <uix:NTypeInto.Target>
+                                                                      <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="438, 486, 379, 40" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='' /&gt;" Guid="0d4f3490-ec7e-4869-961e-e02433abe45a" InformativeScreenshot="9f1cdc30e7830cc4640f5ff47f6f07d4.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
                                                                         <uix:TargetAnchorable.Anchors>
                                                                           <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                                                            <uix:Target DesignTimeRectangle="641, 456, 45, 31" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='사업장' type='' tag='SPAN' class='' check:innerText='사업장' /&gt;" Guid="d34fa77b-bf38-4f70-a77d-e35755533fa0" SearchSteps="FuzzySelector" />
+                                                                            <uix:Target DesignTimeRectangle="285, 485, 151, 42" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='unidocu-th-SU_NAME' type='' tag='TH' class='unidocu-th Uni_InputText' aaname='공급자명' check:innerText='공급자명' /&gt;" Guid="26b1a321-c8f9-4c12-96ee-8eaa85653585" SearchSteps="FuzzySelector" />
+                                                                          </scg:List>
+                                                                        </uix:TargetAnchorable.Anchors>
+                                                                        <uix:TargetAnchorable.PointOffset>
+                                                                          <uix:PointOffset Position="BottomRight" X="-106" Y="-15" />
+                                                                        </uix:TargetAnchorable.PointOffset>
+                                                                      </uix:TargetAnchorable>
+                                                                    </uix:NTypeInto.Target>
+                                                                    <uix:NTypeInto.VerifyOptions>
+                                                                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                                                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                                                          <InArgument x:TypeArguments="x:Boolean" />
+                                                                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                                                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                                                          <InArgument x:TypeArguments="x:Double" />
+                                                                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                                                      </uix:VerifyExecutionTypeIntoOptions>
+                                                                    </uix:NTypeInto.VerifyOptions>
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                  </uix:NTypeInto>
+                                                                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="#'처리담당자' = '부서' 클릭" ClickType="Single" DisplayName="Click '부서'" sap:VirtualizedContainerService.HintSize="547.2,256.8" sap2010:WorkflowViewState.IdRef="NClick_62" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
+                                                                    <uix:NClick.Target>
+                                                                      <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="530, 452, 21, 21" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='' type='' tag='I' aaname='' /&gt;" Guid="d45d190f-52e2-41d3-8771-900c61976dc2" InformativeScreenshot="6fc512d18b51b3f304f9e0220e05fb54.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='2' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                                                                        <uix:TargetAnchorable.Anchors>
+                                                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                                            <uix:Target DesignTimeRectangle="561, 446, 30, 31" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='부서' type='' tag='SPAN' class='' check:innerText='부서' /&gt;" Guid="0dfcafa8-6ac3-42f4-807d-89d0f8c301fd" SearchSteps="FuzzySelector" />
                                                                           </scg:List>
                                                                         </uix:TargetAnchorable.Anchors>
                                                                       </uix:TargetAnchorable>
@@ -1540,7 +1380,23 @@
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                   </uix:NClick>
-                                                                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="#'검색' 버튼 클릭" ClickType="Single" DisplayName="Click '검색'" sap:VirtualizedContainerService.HintSize="480,220.8" sap2010:WorkflowViewState.IdRef="NClick_65" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
+                                                                  <uix:NClick sap2010:Annotation.AnnotationText="#'검색' 버튼 클릭" ClickType="Single" DisplayName="Click '검색'" sap:VirtualizedContainerService.HintSize="547.2,220.8" sap2010:WorkflowViewState.IdRef="NClick_63" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
+                                                                    <uix:NClick.ActivateBefore>
+                                                                      <InArgument x:TypeArguments="x:Boolean">
+                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                          </scg:Dictionary>
+                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                        <Literal x:TypeArguments="x:Boolean" Value="True">
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                        </Literal>
+                                                                      </InArgument>
+                                                                    </uix:NClick.ActivateBefore>
                                                                     <uix:NClick.Target>
                                                                       <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" CVScreenId="c3468fe3-0dd0-4cc3-bd7f-14a34ea333a6" CvElementArea="1800, 354, 106, 37" CvTextArea="1845, 364, 32, 17" CvType="Button" DesignTimeRectangle="1803, 357, 100, 32" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl parentid='search-condition' tag='BUTTON' type='' class='unidocu-button panel-search-button dark_gray' aaname='검색' check:innerText='검색' /&gt;" Guid="4fd28d3e-db97-43bd-9ca2-4da0648dd227" InformativeScreenshot="101fc8b8fc242dcf04e159b2a2cc1459.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='2' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                                         <uix:TargetAnchorable.CvTextArgument>
@@ -1573,8 +1429,8 @@
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                   </uix:NClick>
-                                                                  <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="480,122.4" sap2010:WorkflowViewState.IdRef="Delay_19" />
-                                                                  <uix:NGetText sap2010:Annotation.AnnotationText="#row count &lt;&gt; 0, row count 값 새로 추출" DisplayName="Get Text 'row count' 값 가져오기" sap:VirtualizedContainerService.HintSize="480,220.8" sap2010:WorkflowViewState.IdRef="NGetText_18" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" TextString="[Str_RowCount]" Version="V4">
+                                                                  <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="547.2,122.4" sap2010:WorkflowViewState.IdRef="Delay_23" />
+                                                                  <uix:NGetText sap2010:Annotation.AnnotationText="#row count 값 추출(내역 개수 확인용)" DisplayName="Get Text 'row count' 값 가져오기" sap:VirtualizedContainerService.HintSize="547.2,220.8" sap2010:WorkflowViewState.IdRef="NGetText_17" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" TextString="[Str_RowCount]" Version="V4">
                                                                     <uix:NGetText.Target>
                                                                       <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="1758, 617, 93, 15" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='badge-text' parentid='unidocu-grid-panel' tag='SPAN' type='' /&gt;" Guid="b91886f0-38fd-4dce-9a0f-a1b6ecac2aff" InformativeScreenshot="a9054b5124db7b4c61f88513147959dd.png" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
                                                                         <uix:TargetAnchorable.ScopeSelectorArgument>
@@ -1607,10 +1463,10 @@
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                   </uix:NGetText>
-                                                                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="480,149.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
+                                                                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="547.2,149.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
                                                                     <ui:MultipleAssign.AssignOperations>
                                                                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
                                                                           <ui:AssignOperation.To>
                                                                             <OutArgument x:TypeArguments="x:String">[Str_CountNumber]</OutArgument>
                                                                           </ui:AssignOperation.To>
@@ -1621,218 +1477,354 @@
                                                                       </scg:List>
                                                                     </ui:MultipleAssign.AssignOperations>
                                                                   </ui:MultipleAssign>
-                                                                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="#첫 번째 항목 선택, canvas 타겟 지정 불가로 인해 이미지 타겟팅 적용하기" ClickType="Single" DisplayName="Click '첫 번째 항목'" sap:VirtualizedContainerService.HintSize="480,269.6" sap2010:WorkflowViewState.IdRef="NClick_71" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
-                                                                    <uix:NClick.Target>
-                                                                      <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="270, 724, 54, 32" DesignTimeScaleFactor="1.25" Guid="ac1d640c-58bf-461c-a829-b53cc1439291" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADYAAAAgCAYAAABZyotbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHWSURBVFhH7ZbNykFBHMbfC7OwOLkCO6Vk4QZsyIKNG7BnxdoVEOUzSkqRJMn3VxZKUc/bMx0pzenQmffNqXnqtzjmb8zPjL/5gZlOp4PT6fRnzGYzNBoNXK9X8xPV53K5CA/DMKDFnKLFHESLqUSLOYgWU4mV2P1+x+FwwG63+4jz+WzO8IwSseVyifV6LR2TYSXG51arhWaziXa7/Rb1eh2DwcCc4RklYsViEdVqVTomw05ss9ngdru9xXQ6VS+2Wq2EVCQSQTweR6lUkta9Yie23+/NV+zDuZSLbbdbscBkMolQKCTkKpWK+MZl9Q++XuwBj2EqlUIgEBBytVoNi8VCWktcI0Yow53z+XxIJBLi2aqhuEqMi+H7uHNerxexWMyyobhKjPT7faTTaXg8HkSjUZTLZWmdq8Q4eS6XQzAYRDgcRqFQwHA4lNa6RowClGLbZwOh1Hg8ltaSrxfj9Wc+nwsptntK5fN5cROR1T/4ejG29Gw2C7/fL8S4U/wPOx6P0voHXy/GBfAYZjIZITWZTKR1r9iJdbtd0YjegffFP/uN9Xo9jEYj6ZgMKzHe7nmMebw/gTf81ygR+xQrMZXRYirRYg6ixVSixRxEi6nkf8UM/ALzw2H11fSrtQAAAABJRU5ErkJggg==" InformativeScreenshot="42bf5c61f26b1892b56d3799348f0a78.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='지원팀 주간회의(2024년) - Google Sheets' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V4" Visibility="Interactive">
-                                                                        <uix:TargetAnchorable.PointOffset>
-                                                                          <uix:PointOffset Position="TopRight" X="-16" Y="13" />
-                                                                        </uix:TargetAnchorable.PointOffset>
-                                                                      </uix:TargetAnchorable>
-                                                                    </uix:NClick.Target>
-                                                                    <uix:NClick.VerifyOptions>
-                                                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                                                                        <uix:VerifyExecutionOptions.Retry>
-                                                                          <InArgument x:TypeArguments="x:Boolean" />
-                                                                        </uix:VerifyExecutionOptions.Retry>
-                                                                        <uix:VerifyExecutionOptions.Timeout>
-                                                                          <InArgument x:TypeArguments="x:Double" />
-                                                                        </uix:VerifyExecutionOptions.Timeout>
-                                                                      </uix:VerifyExecutionOptions>
-                                                                    </uix:NClick.VerifyOptions>
+                                                                  <If sap2010:Annotation.AnnotationText="#'처리담당자'의 row count에 따른 항목 변경&#xA;#'부서'를 클릭했는데 0이면, '사업장' 클릭&#xA;#'세금계산서 정산' 페이지의 '처리담당자' 기본값 = '본인'" Condition="[CInt(Str_CountNumber) = 0]" DisplayName="If" sap:VirtualizedContainerService.HintSize="547.2,3042.4" sap2010:WorkflowViewState.IdRef="If_20">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                      </scg:Dictionary>
-                                                                    </sap:WorkflowViewStateService.ViewState>
-                                                                  </uix:NClick>
-                                                                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="#항목 선택 후 '전표작성' 버튼 클릭하기" ClickType="Single" DisplayName="Click '전표작성'" sap:VirtualizedContainerService.HintSize="480,256.8" sap2010:WorkflowViewState.IdRef="NClick_72" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
-                                                                    <uix:NClick.Target>
-                                                                      <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="1390, 653, 87, 32" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='createStatement' tag='BUTTON' type='' class='unidocu-button  blue ' aaname='전표작성' check:innerText='전표작성' /&gt;" Guid="6111fcc3-0418-4792-b61a-ff5d44470ccf" InformativeScreenshot="e3d748078f86ef63a2bceac7c3784a72.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
-                                                                    </uix:NClick.Target>
-                                                                    <uix:NClick.VerifyOptions>
-                                                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                                                                        <uix:VerifyExecutionOptions.Retry>
-                                                                          <InArgument x:TypeArguments="x:Boolean" />
-                                                                        </uix:VerifyExecutionOptions.Retry>
-                                                                        <uix:VerifyExecutionOptions.Timeout>
-                                                                          <InArgument x:TypeArguments="x:Double" />
-                                                                        </uix:VerifyExecutionOptions.Timeout>
-                                                                      </uix:VerifyExecutionOptions>
-                                                                    </uix:NClick.VerifyOptions>
-                                                                    <sap:WorkflowViewStateService.ViewState>
-                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                  </uix:NClick>
-                                                                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="480,113.6" sap2010:WorkflowViewState.IdRef="Delay_22" />
-                                                                </Sequence>
-                                                              </If.Then>
-                                                              <If.Else>
-                                                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_190">
-                                                                  <sap:WorkflowViewStateService.ViewState>
-                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                    </scg:Dictionary>
-                                                                  </sap:WorkflowViewStateService.ViewState>
-                                                                </Sequence>
-                                                              </If.Else>
-                                                            </If>
-                                                            <uix:NGetText DisplayName="Get Text '공급가액'" sap:VirtualizedContainerService.HintSize="547.2,189.6" sap2010:WorkflowViewState.IdRef="NGetText_20" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" TextString="[Str_공급가액]" Version="V4">
-                                                              <uix:NGetText.Target>
-                                                                <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="971, 514, 115, 40" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl parentid='unidocu-td-CHARGETOTAL' type='text' tag='INPUT' class='' aaname='' /&gt;" Guid="8470fe07-0ebf-425d-8112-1af82b3757f3" InformativeScreenshot="ecc6664f23bdcae7fa236054b48ac8fe.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
-                                                                  <uix:TargetAnchorable.Anchors>
-                                                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                                                      <uix:Target DesignTimeRectangle="818, 513, 151, 42" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='unidocu-th-CHARGETOTAL' type='' tag='TH' class='unidocu-th Uni_InputAmount' aaname='공급가액' check:innerText='공급가액' /&gt;" Guid="cc61278f-3357-4e91-bc6d-35e3307842fe" SearchSteps="FuzzySelector" />
-                                                                    </scg:List>
-                                                                  </uix:TargetAnchorable.Anchors>
-                                                                </uix:TargetAnchorable>
-                                                              </uix:NGetText.Target>
-                                                            </uix:NGetText>
-                                                            <Assign DisplayName="Set Variable Value" sap:VirtualizedContainerService.HintSize="547.2,114.4" sap2010:WorkflowViewState.IdRef="Assign_5">
-                                                              <Assign.To>
-                                                                <OutArgument x:TypeArguments="x:Object">[CurrentRow("공급가액")]</OutArgument>
-                                                              </Assign.To>
-                                                              <Assign.Value>
-                                                                <InArgument x:TypeArguments="x:Object">[Str_공급가액]</InArgument>
-                                                              </Assign.Value>
-                                                            </Assign>
-                                                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="547.2,188.8" sap2010:WorkflowViewState.IdRef="CommentOut_72">
-                                                              <ui:CommentOut.Body>
-                                                                <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="416,85.6" sap2010:WorkflowViewState.IdRef="Sequence_211">
-                                                                  <sap:WorkflowViewStateService.ViewState>
-                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                    </scg:Dictionary>
-                                                                  </sap:WorkflowViewStateService.ViewState>
-                                                                  <uix:NCheckState DisplayName="Check App State '전표작성 잘못 클릭: 알림'" sap:VirtualizedContainerService.HintSize="401.6,48" sap2010:WorkflowViewState.IdRef="NCheckState_10" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
-                                                                    <uix:NCheckState.IfExists>
-                                                                      <Sequence DisplayName="타겟이 나타남" sap:VirtualizedContainerService.HintSize="449.6,244" sap2010:WorkflowViewState.IdRef="Sequence_196">
+                                                                    <If.Then>
+                                                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="513.6,2722.4" sap2010:WorkflowViewState.IdRef="Sequence_189">
                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '확인'" sap:VirtualizedContainerService.HintSize="416,182.4" sap2010:WorkflowViewState.IdRef="NClick_68" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
+                                                                        <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="#row count = 0, '처리담당자' = '사업장' 클릭" ClickType="Single" DisplayName="Click '사업장'" sap:VirtualizedContainerService.HintSize="480,256.8" sap2010:WorkflowViewState.IdRef="NClick_64" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
                                                                           <uix:NClick.Target>
-                                                                            <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="1236, 701, 55, 33" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='확인' tag='BUTTON' type='button' class='unidocu-button blue ui-button ui-corner-all ui-widget' check:innerText='확인' /&gt;" Guid="f6282f9f-f226-4024-bd88-fc9cd30dd601" InformativeScreenshot="99d36096dc792253856f6531da29efec.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+                                                                            <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="610, 462, 21, 21" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='' type='' tag='I' aaname='' /&gt;" Guid="e6d2ef16-1ad7-4897-ada1-4e23549c20a4" InformativeScreenshot="a2c5d1c40d10dc1f2ed64320934e739d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='2' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                                                                              <uix:TargetAnchorable.Anchors>
+                                                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                                                  <uix:Target DesignTimeRectangle="641, 456, 45, 31" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='사업장' type='' tag='SPAN' class='' check:innerText='사업장' /&gt;" Guid="d34fa77b-bf38-4f70-a77d-e35755533fa0" SearchSteps="FuzzySelector" />
+                                                                                </scg:List>
+                                                                              </uix:TargetAnchorable.Anchors>
+                                                                            </uix:TargetAnchorable>
                                                                           </uix:NClick.Target>
+                                                                          <uix:NClick.VerifyOptions>
+                                                                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                                              <uix:VerifyExecutionOptions.Retry>
+                                                                                <InArgument x:TypeArguments="x:Boolean" />
+                                                                              </uix:VerifyExecutionOptions.Retry>
+                                                                              <uix:VerifyExecutionOptions.Timeout>
+                                                                                <InArgument x:TypeArguments="x:Double" />
+                                                                              </uix:VerifyExecutionOptions.Timeout>
+                                                                            </uix:VerifyExecutionOptions>
+                                                                          </uix:NClick.VerifyOptions>
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
                                                                         </uix:NClick>
+                                                                        <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="#'검색' 버튼 클릭" ClickType="Single" DisplayName="Click '검색'" sap:VirtualizedContainerService.HintSize="480,220.8" sap2010:WorkflowViewState.IdRef="NClick_65" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
+                                                                          <uix:NClick.Target>
+                                                                            <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" CVScreenId="c3468fe3-0dd0-4cc3-bd7f-14a34ea333a6" CvElementArea="1800, 354, 106, 37" CvTextArea="1845, 364, 32, 17" CvType="Button" DesignTimeRectangle="1803, 357, 100, 32" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl parentid='search-condition' tag='BUTTON' type='' class='unidocu-button panel-search-button dark_gray' aaname='검색' check:innerText='검색' /&gt;" Guid="4fd28d3e-db97-43bd-9ca2-4da0648dd227" InformativeScreenshot="101fc8b8fc242dcf04e159b2a2cc1459.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='2' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                                                              <uix:TargetAnchorable.CvTextArgument>
+                                                                                <InArgument x:TypeArguments="x:String">
+                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                    </scg:Dictionary>
+                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                  <Literal x:TypeArguments="x:String">
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>Z4</Literal>
+                                                                                </InArgument>
+                                                                              </uix:TargetAnchorable.CvTextArgument>
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                            </uix:TargetAnchorable>
+                                                                          </uix:NClick.Target>
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                        </uix:NClick>
+                                                                        <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="480,122.4" sap2010:WorkflowViewState.IdRef="Delay_19" />
+                                                                        <uix:NGetText sap2010:Annotation.AnnotationText="#row count &lt;&gt; 0, row count 값 새로 추출" DisplayName="Get Text 'row count' 값 가져오기" sap:VirtualizedContainerService.HintSize="480,220.8" sap2010:WorkflowViewState.IdRef="NGetText_18" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" TextString="[Str_RowCount]" Version="V4">
+                                                                          <uix:NGetText.Target>
+                                                                            <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="1758, 617, 93, 15" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='badge-text' parentid='unidocu-grid-panel' tag='SPAN' type='' /&gt;" Guid="b91886f0-38fd-4dce-9a0f-a1b6ecac2aff" InformativeScreenshot="a9054b5124db7b4c61f88513147959dd.png" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                                                                              <uix:TargetAnchorable.ScopeSelectorArgument>
+                                                                                <InArgument x:TypeArguments="x:String">
+                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                    </scg:Dictionary>
+                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                  <Literal x:TypeArguments="x:String">
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>&lt;html app='chrome.exe' title='SPIGEN UNIDOCU' /&gt;</Literal>
+                                                                                </InArgument>
+                                                                              </uix:TargetAnchorable.ScopeSelectorArgument>
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                            </uix:TargetAnchorable>
+                                                                          </uix:NGetText.Target>
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                        </uix:NGetText>
+                                                                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="480,149.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
+                                                                          <ui:MultipleAssign.AssignOperations>
+                                                                            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                                                                                <ui:AssignOperation.To>
+                                                                                  <OutArgument x:TypeArguments="x:String">[Str_CountNumber]</OutArgument>
+                                                                                </ui:AssignOperation.To>
+                                                                                <ui:AssignOperation.Value>
+                                                                                  <InArgument x:TypeArguments="x:String">[Str_RowCount.Split(" "c)(3)]</InArgument>
+                                                                                </ui:AssignOperation.Value>
+                                                                              </ui:AssignOperation>
+                                                                            </scg:List>
+                                                                          </ui:MultipleAssign.AssignOperations>
+                                                                        </ui:MultipleAssign>
+                                                                        <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="#첫 번째 항목 선택, canvas 타겟 지정 불가로 인해 이미지 타겟팅 적용하기" ClickType="Single" DisplayName="Click '첫 번째 항목'" sap:VirtualizedContainerService.HintSize="480,269.6" sap2010:WorkflowViewState.IdRef="NClick_71" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
+                                                                          <uix:NClick.Target>
+                                                                            <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="270, 724, 54, 32" DesignTimeScaleFactor="1.25" Guid="ac1d640c-58bf-461c-a829-b53cc1439291" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADYAAAAgCAYAAABZyotbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHWSURBVFhH7ZbNykFBHMbfC7OwOLkCO6Vk4QZsyIKNG7BnxdoVEOUzSkqRJMn3VxZKUc/bMx0pzenQmffNqXnqtzjmb8zPjL/5gZlOp4PT6fRnzGYzNBoNXK9X8xPV53K5CA/DMKDFnKLFHESLqUSLOYgWU4mV2P1+x+FwwG63+4jz+WzO8IwSseVyifV6LR2TYSXG51arhWaziXa7/Rb1eh2DwcCc4RklYsViEdVqVTomw05ss9ngdru9xXQ6VS+2Wq2EVCQSQTweR6lUkta9Yie23+/NV+zDuZSLbbdbscBkMolQKCTkKpWK+MZl9Q++XuwBj2EqlUIgEBBytVoNi8VCWktcI0Yow53z+XxIJBLi2aqhuEqMi+H7uHNerxexWMyyobhKjPT7faTTaXg8HkSjUZTLZWmdq8Q4eS6XQzAYRDgcRqFQwHA4lNa6RowClGLbZwOh1Hg8ltaSrxfj9Wc+nwsptntK5fN5cROR1T/4ejG29Gw2C7/fL8S4U/wPOx6P0voHXy/GBfAYZjIZITWZTKR1r9iJdbtd0YjegffFP/uN9Xo9jEYj6ZgMKzHe7nmMebw/gTf81ygR+xQrMZXRYirRYg6ixVSixRxEi6nkf8UM/ALzw2H11fSrtQAAAABJRU5ErkJggg==" InformativeScreenshot="42bf5c61f26b1892b56d3799348f0a78.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='지원팀 주간회의(2024년) - Google Sheets' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V4" Visibility="Interactive">
+                                                                              <uix:TargetAnchorable.PointOffset>
+                                                                                <uix:PointOffset Position="TopRight" X="-16" Y="13" />
+                                                                              </uix:TargetAnchorable.PointOffset>
+                                                                            </uix:TargetAnchorable>
+                                                                          </uix:NClick.Target>
+                                                                          <uix:NClick.VerifyOptions>
+                                                                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                                              <uix:VerifyExecutionOptions.Retry>
+                                                                                <InArgument x:TypeArguments="x:Boolean" />
+                                                                              </uix:VerifyExecutionOptions.Retry>
+                                                                              <uix:VerifyExecutionOptions.Timeout>
+                                                                                <InArgument x:TypeArguments="x:Double" />
+                                                                              </uix:VerifyExecutionOptions.Timeout>
+                                                                            </uix:VerifyExecutionOptions>
+                                                                          </uix:NClick.VerifyOptions>
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                        </uix:NClick>
+                                                                        <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="#항목 선택 후 '전표작성' 버튼 클릭하기" ClickType="Single" DisplayName="Click '전표작성'" sap:VirtualizedContainerService.HintSize="480,256.8" sap2010:WorkflowViewState.IdRef="NClick_72" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
+                                                                          <uix:NClick.Target>
+                                                                            <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="1390, 653, 87, 32" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='createStatement' tag='BUTTON' type='' class='unidocu-button  blue ' aaname='전표작성' check:innerText='전표작성' /&gt;" Guid="6111fcc3-0418-4792-b61a-ff5d44470ccf" InformativeScreenshot="e3d748078f86ef63a2bceac7c3784a72.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+                                                                          </uix:NClick.Target>
+                                                                          <uix:NClick.VerifyOptions>
+                                                                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                                              <uix:VerifyExecutionOptions.Retry>
+                                                                                <InArgument x:TypeArguments="x:Boolean" />
+                                                                              </uix:VerifyExecutionOptions.Retry>
+                                                                              <uix:VerifyExecutionOptions.Timeout>
+                                                                                <InArgument x:TypeArguments="x:Double" />
+                                                                              </uix:VerifyExecutionOptions.Timeout>
+                                                                            </uix:VerifyExecutionOptions>
+                                                                          </uix:NClick.VerifyOptions>
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                        </uix:NClick>
+                                                                        <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="480,122.4" sap2010:WorkflowViewState.IdRef="Delay_22" />
+                                                                        <uix:NGetText DisplayName="Get Text '공급가액'" sap:VirtualizedContainerService.HintSize="480,189.6" sap2010:WorkflowViewState.IdRef="NGetText_20" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" TextString="[Str_공급가액]" Version="V4">
+                                                                          <uix:NGetText.Target>
+                                                                            <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="971, 514, 115, 40" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl parentid='unidocu-td-CHARGETOTAL' type='text' tag='INPUT' class='' aaname='' /&gt;" Guid="8470fe07-0ebf-425d-8112-1af82b3757f3" InformativeScreenshot="ecc6664f23bdcae7fa236054b48ac8fe.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                                                                              <uix:TargetAnchorable.Anchors>
+                                                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                                                  <uix:Target DesignTimeRectangle="818, 513, 151, 42" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='unidocu-th-CHARGETOTAL' type='' tag='TH' class='unidocu-th Uni_InputAmount' aaname='공급가액' check:innerText='공급가액' /&gt;" Guid="cc61278f-3357-4e91-bc6d-35e3307842fe" SearchSteps="FuzzySelector" />
+                                                                                </scg:List>
+                                                                              </uix:TargetAnchorable.Anchors>
+                                                                            </uix:TargetAnchorable>
+                                                                          </uix:NGetText.Target>
+                                                                        </uix:NGetText>
+                                                                        <Assign DisplayName="Set Variable Value" sap:VirtualizedContainerService.HintSize="480,113.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                                                          <Assign.To>
+                                                                            <OutArgument x:TypeArguments="x:Object">[CurrentRow("공급가액")]</OutArgument>
+                                                                          </Assign.To>
+                                                                          <Assign.Value>
+                                                                            <InArgument x:TypeArguments="x:Object">[Str_공급가액]</InArgument>
+                                                                          </Assign.Value>
+                                                                        </Assign>
+                                                                        <uga:GSuiteApplicationScope Account="{x:Null}" ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" BucketId="{x:Null}" BucketName="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" SecureCredentialSecret="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" sap2010:Annotation.AnnotationText="#3.2.1.2.2와 4.2.1.1.2 액티비티에서 추출한 데이터 업체별 시트 '금액' 열에 입력" AuthenticationType="ServiceAccountKey" BucketInputMode="Browse" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="480,626.4" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_10" KeyPath="[Str_key경로]" KeyType="JSON" OAuthClient="UIPATH" Password="notasecret" RuntimeItemInputMode="Browse" ServiceAccountEmail="rpa-62@meetingroom-display-403101.iam.gserviceaccount.com" Services="Unselected" UseConnectionService="False" User="7753D998">
+                                                                          <uga:GSuiteApplicationScope.AuthenticationScopes>
+                                                                            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                                                          </uga:GSuiteApplicationScope.AuthenticationScopes>
+                                                                          <uga:GSuiteApplicationScope.Body>
+                                                                            <ActivityAction x:TypeArguments="x:Object">
+                                                                              <ActivityAction.Argument>
+                                                                                <DelegateInArgument x:TypeArguments="x:Object" Name="GSuiteScope" />
+                                                                              </ActivityAction.Argument>
+                                                                              <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="416,276" sap2010:WorkflowViewState.IdRef="Sequence_193">
+                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                  </scg:Dictionary>
+                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[&quot;I&quot; + (Int_행번호 + 8).ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="382.4,216" sap2010:WorkflowViewState.IdRef="WriteCell_5" IsInsideBatchUpdateScope="False" SheetName="[TabName]" SpreadsheetId="[Str_지원팀전표시트ID]" Value="[Str_공급가액]" />
+                                                                              </Sequence>
+                                                                            </ActivityAction>
+                                                                          </uga:GSuiteApplicationScope.Body>
+                                                                          <uga:GSuiteApplicationScope.BucketFullPathBackup>
+                                                                            <usau1:BackupSlot x:TypeArguments="ugade:EDriveItemMode" StoredValue="Browse">
+                                                                              <usau1:BackupSlot.BackupValues>
+                                                                                <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                                                                              </usau1:BackupSlot.BackupValues>
+                                                                            </usau1:BackupSlot>
+                                                                          </uga:GSuiteApplicationScope.BucketFullPathBackup>
+                                                                          <uga:GSuiteApplicationScope.RuntimeItemFullPathBackup>
+                                                                            <usau1:BackupSlot x:TypeArguments="ugade:EDriveItemMode" StoredValue="{x:Null}">
+                                                                              <usau1:BackupSlot.BackupValues>
+                                                                                <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                                                                              </usau1:BackupSlot.BackupValues>
+                                                                            </usau1:BackupSlot>
+                                                                          </uga:GSuiteApplicationScope.RuntimeItemFullPathBackup>
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                        </uga:GSuiteApplicationScope>
+                                                                        <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="480,113.6" sap2010:WorkflowViewState.IdRef="Delay_20" />
                                                                       </Sequence>
-                                                                    </uix:NCheckState.IfExists>
-                                                                    <uix:NCheckState.IfNotExists>
-                                                                      <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="449.6,91.2" sap2010:WorkflowViewState.IdRef="Sequence_197">
+                                                                    </If.Then>
+                                                                    <If.Else>
+                                                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_190">
+                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                          </scg:Dictionary>
+                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                      </Sequence>
+                                                                    </If.Else>
+                                                                  </If>
+                                                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="547.2,187.2" sap2010:WorkflowViewState.IdRef="CommentOut_72">
+                                                                    <ui:CommentOut.Body>
+                                                                      <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="416,85.6" sap2010:WorkflowViewState.IdRef="Sequence_211">
                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
+                                                                        <uix:NCheckState DisplayName="Check App State '전표작성 잘못 클릭: 알림'" sap:VirtualizedContainerService.HintSize="401.6,48" sap2010:WorkflowViewState.IdRef="NCheckState_10" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
+                                                                          <uix:NCheckState.IfExists>
+                                                                            <Sequence DisplayName="타겟이 나타남" sap:VirtualizedContainerService.HintSize="449.6,244" sap2010:WorkflowViewState.IdRef="Sequence_196">
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '확인'" sap:VirtualizedContainerService.HintSize="416,182.4" sap2010:WorkflowViewState.IdRef="NClick_68" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
+                                                                                <uix:NClick.Target>
+                                                                                  <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="1236, 701, 55, 33" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='확인' tag='BUTTON' type='button' class='unidocu-button blue ui-button ui-corner-all ui-widget' check:innerText='확인' /&gt;" Guid="f6282f9f-f226-4024-bd88-fc9cd30dd601" InformativeScreenshot="99d36096dc792253856f6531da29efec.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+                                                                                </uix:NClick.Target>
+                                                                              </uix:NClick>
+                                                                            </Sequence>
+                                                                          </uix:NCheckState.IfExists>
+                                                                          <uix:NCheckState.IfNotExists>
+                                                                            <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="449.6,91.2" sap2010:WorkflowViewState.IdRef="Sequence_197">
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                            </Sequence>
+                                                                          </uix:NCheckState.IfNotExists>
+                                                                          <uix:NCheckState.Target>
+                                                                            <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="685, 534, 625, 59" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl type='' class='ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle' parentid='unipost-unidocu' tag='DIV' aaname='' check:innerText='알림' /&gt;" Guid="7ca87ea0-bc5c-4970-a4fe-a0450b8b0e10" InformativeScreenshot="75158f22155de540120b5767a25fd807.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+                                                                          </uix:NCheckState.Target>
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                        </uix:NCheckState>
                                                                       </Sequence>
-                                                                    </uix:NCheckState.IfNotExists>
-                                                                    <uix:NCheckState.Target>
-                                                                      <uix:TargetAnchorable BrowserURL="eacc.spigen.com/unidocu/view.do" DesignTimeRectangle="685, 534, 625, 59" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl type='' class='ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle' parentid='unipost-unidocu' tag='DIV' aaname='' check:innerText='알림' /&gt;" Guid="7ca87ea0-bc5c-4970-a4fe-a0450b8b0e10" InformativeScreenshot="75158f22155de540120b5767a25fd807.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
-                                                                    </uix:NCheckState.Target>
-                                                                    <sap:WorkflowViewStateService.ViewState>
-                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                      </scg:Dictionary>
-                                                                    </sap:WorkflowViewStateService.ViewState>
-                                                                  </uix:NCheckState>
+                                                                    </ui:CommentOut.Body>
+                                                                  </ui:CommentOut>
                                                                 </Sequence>
-                                                              </ui:CommentOut.Body>
-                                                            </ui:CommentOut>
-                                                          </Sequence>
-                                                        </ActivityAction>
-                                                      </uix:NApplicationCard.Body>
-                                                      <uix:NApplicationCard.TargetApp>
-                                                        <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGHSURBVDhPbZM9SwMxGIAttxRbF0H0ptJdcFFvFkoLdqjgRycXHVw6FRQH9+pkqR8gaE9xrq046C0N6iBKD4eSwX9hwRRaCPFNTM7krsMDIbzPQ94hY4yx2Ci+N1cswJZY/G4wnykAU/pcJNCvpp3eTs4FiQBMQkhuuQEyBbp6xAj0a6kKwCBCe9t5rAI/+TyWMpMEkSAQyAoZGSEbERHon6YcQ1Ycp9FgIYNCooJHCyIwfJh2QaChAAISMMQJR+jR1mFDrEDfJi2ADFszGAQVEbJaDwQ9Qsulczxx1iWAxQM2wDgicmLKeoQsZpGUmcQ2AvhjDt/4a+jaX48E4l4zEX+8R8mLz0hArMBlECnAACMiZK+JABZ/alEZ+VuBD3y9z7qarBARQ1bwyGXH5a4I3PqrTkgWXHWKaNy7M+X/iBMEOCBUdLnuF2n5ZR8vtWsYBBoKVJQXBPSIkkvPB4wTigQyxwhw6v6Gs/e664JIVICfs+2qm/Qa4tk6kYACJAuwJeI7R2GxXyf7gK8mSLznAAAAAElFTkSuQmCC" InformativeScreenshot="6f03e6037805553228c8d13573fa2e2d.jpg" Selector="&lt;html app='chrome.exe' title='SPIGEN UNIDOCU' /&gt;" Title="SPIGEN UNIDOCU" Url="https://eacc.spigen.com/unidocu/view.do#UD_0703_000" Version="V1" />
-                                                      </uix:NApplicationCard.TargetApp>
-                                                      <sap:WorkflowViewStateService.ViewState>
-                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                        </scg:Dictionary>
-                                                      </sap:WorkflowViewStateService.ViewState>
-                                                    </uix:NApplicationCard>
-                                                  </Sequence>
-                                                </ActivityAction>
-                                              </ui:RetryScope.ActivityBody>
-                                              <ui:RetryScope.Condition>
-                                                <ActivityFunc x:TypeArguments="x:Boolean" />
-                                              </ui:RetryScope.Condition>
-                                            </ui:RetryScope>
+                                                              </ActivityAction>
+                                                            </uix:NApplicationCard.Body>
+                                                            <uix:NApplicationCard.TargetApp>
+                                                              <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGHSURBVDhPbZM9SwMxGIAttxRbF0H0ptJdcFFvFkoLdqjgRycXHVw6FRQH9+pkqR8gaE9xrq046C0N6iBKD4eSwX9hwRRaCPFNTM7krsMDIbzPQ94hY4yx2Ci+N1cswJZY/G4wnykAU/pcJNCvpp3eTs4FiQBMQkhuuQEyBbp6xAj0a6kKwCBCe9t5rAI/+TyWMpMEkSAQyAoZGSEbERHon6YcQ1Ycp9FgIYNCooJHCyIwfJh2QaChAAISMMQJR+jR1mFDrEDfJi2ADFszGAQVEbJaDwQ9Qsulczxx1iWAxQM2wDgicmLKeoQsZpGUmcQ2AvhjDt/4a+jaX48E4l4zEX+8R8mLz0hArMBlECnAACMiZK+JABZ/alEZ+VuBD3y9z7qarBARQ1bwyGXH5a4I3PqrTkgWXHWKaNy7M+X/iBMEOCBUdLnuF2n5ZR8vtWsYBBoKVJQXBPSIkkvPB4wTigQyxwhw6v6Gs/e664JIVICfs+2qm/Qa4tk6kYACJAuwJeI7R2GxXyf7gK8mSLznAAAAAElFTkSuQmCC" InformativeScreenshot="6f03e6037805553228c8d13573fa2e2d.jpg" Selector="&lt;html app='chrome.exe' title='SPIGEN UNIDOCU' /&gt;" Title="SPIGEN UNIDOCU" Url="https://eacc.spigen.com/unidocu/view.do#UD_0703_000" Version="V1" />
+                                                            </uix:NApplicationCard.TargetApp>
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                          </uix:NApplicationCard>
+                                                        </Sequence>
+                                                      </ActivityAction>
+                                                    </ui:RetryScope.ActivityBody>
+                                                    <ui:RetryScope.Condition>
+                                                      <ActivityFunc x:TypeArguments="x:Boolean" />
+                                                    </ui:RetryScope.Condition>
+                                                  </ui:RetryScope>
+                                                </Sequence>
+                                              </TryCatch.Try>
+                                              <TryCatch.Catches>
+                                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="668.8,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="s:Exception">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Error" Message="[CurrentRow(&quot;사업장명&quot;).ToString + &quot;처리 중 오류 발생: &quot; + exception.Message]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                              </TryCatch.Catches>
+                                            </TryCatch>
                                           </Sequence>
-                                        </TryCatch.Try>
-                                        <TryCatch.Catches>
-                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="668.8,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+                                        </If.Then>
+                                        <If.Else>
+                                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_188">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ActivityAction x:TypeArguments="s:Exception">
-                                              <ActivityAction.Argument>
-                                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                              </ActivityAction.Argument>
-                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Error" Message="[Str_공급자명 + &quot;검색 오류&quot; + exception.Message]" />
-                                            </ActivityAction>
-                                          </Catch>
-                                        </TryCatch.Catches>
-                                      </TryCatch>
-                                      <uga:GSuiteApplicationScope ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" BucketId="{x:Null}" BucketName="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" SecureCredentialSecret="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" Account="smbaek@spigen.com" sap2010:Annotation.AnnotationText="#3.2.1.2.2와 4.2.1.1.2 액티비티에서 추출한 데이터 업체별 시트 '금액' 열에 입력" AuthenticationType="ServiceAccountKey" BucketInputMode="Browse" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="702.4,1671.2" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_10" KeyPath="[Str_key경로]" KeyType="JSON" OAuthClient="UIPATH" Password="notasecret" RuntimeItemInputMode="Browse" ServiceAccountEmail="rpa-62@meetingroom-display-403101.iam.gserviceaccount.com" Services="Unselected" UseConnectionService="False" User="7753D998">
-                                        <uga:GSuiteApplicationScope.AuthenticationScopes>
-                                          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                                        </uga:GSuiteApplicationScope.AuthenticationScopes>
-                                        <uga:GSuiteApplicationScope.Body>
-                                          <ActivityAction x:TypeArguments="x:Object">
-                                            <ActivityAction.Argument>
-                                              <DelegateInArgument x:TypeArguments="x:Object" Name="GSuiteScope" />
-                                            </ActivityAction.Argument>
-                                            <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="416,276" sap2010:WorkflowViewState.IdRef="Sequence_193">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[&quot;I&quot; + (Int_행번호 + 8).ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="382.4,216" sap2010:WorkflowViewState.IdRef="WriteCell_5" IsInsideBatchUpdateScope="False" SheetName="[TabName]" SpreadsheetId="[Str_지원팀전표시트ID]" Value="[Str_공급가액]" />
-                                            </Sequence>
-                                          </ActivityAction>
-                                        </uga:GSuiteApplicationScope.Body>
-                                        <uga:GSuiteApplicationScope.BucketFullPathBackup>
-                                          <usau1:BackupSlot x:TypeArguments="ugade:EDriveItemMode" StoredValue="Browse">
-                                            <usau1:BackupSlot.BackupValues>
-                                              <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
-                                            </usau1:BackupSlot.BackupValues>
-                                          </usau1:BackupSlot>
-                                        </uga:GSuiteApplicationScope.BucketFullPathBackup>
-                                        <uga:GSuiteApplicationScope.RuntimeItemFullPathBackup>
-                                          <usau1:BackupSlot x:TypeArguments="ugade:EDriveItemMode" StoredValue="{x:Null}">
-                                            <usau1:BackupSlot.BackupValues>
-                                              <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
-                                            </usau1:BackupSlot.BackupValues>
-                                          </usau1:BackupSlot>
-                                        </uga:GSuiteApplicationScope.RuntimeItemFullPathBackup>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </uga:GSuiteApplicationScope>
-                                      <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="702.4,113.6" sap2010:WorkflowViewState.IdRef="Delay_20" />
+                                          </Sequence>
+                                        </If.Else>
+                                      </If>
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_188">
+                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_229">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1841,7 +1833,7 @@
                                     </Sequence>
                                   </If.Else>
                                 </If>
-                                <Sequence sap2010:Annotation.AnnotationText="" DisplayName="시트 자료 바탕으로 csv 생성&amp;업로드" sap:VirtualizedContainerService.HintSize="1249.6,17223.2" sap2010:WorkflowViewState.IdRef="Sequence_201">
+                                <Sequence sap2010:Annotation.AnnotationText="" DisplayName="시트 자료 바탕으로 csv 생성&amp;업로드" sap:VirtualizedContainerService.HintSize="1249.6,16148.8" sap2010:WorkflowViewState.IdRef="Sequence_201">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1919,7 +1911,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:FilterDataTable>
-                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="#Data Table 항목을 순차적으로 검색" DataTable="[Dt_공급가액입력자료_필요정보]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1216,2361.6" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
+                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="#Data Table 항목을 순차적으로 검색" DataTable="[Dt_공급가액입력자료_필요정보]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1216,2325.6" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
                                     <ui:ForEachRow.Body>
                                       <ActivityAction x:TypeArguments="sd:DataRow">
                                         <ActivityAction.Argument>
@@ -1930,14 +1922,14 @@
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1100.8,1947.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                        <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1100.8,1911.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <If sap2010:Annotation.AnnotationText="#'RPA 결과' 열에 '처리완료' 표시 탐색 " Condition="[CurrentRow(&quot;RPA 결과&quot;).ToString.Contains(&quot;RPA처리완료&quot;)]" sap:VirtualizedContainerService.HintSize="1067.2,1887.2" sap2010:WorkflowViewState.IdRef="If_15">
+                                          <If sap2010:Annotation.AnnotationText="#'RPA 결과' 열에 '처리완료' 표시 탐색 " Condition="[CurrentRow(&quot;RPA 결과&quot;).ToString.Contains(&quot;RPA처리완료&quot;)]" sap:VirtualizedContainerService.HintSize="1067.2,1851.2" sap2010:WorkflowViewState.IdRef="If_15">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1955,14 +1947,14 @@
                                               </Sequence>
                                             </If.Then>
                                             <If.Else>
-                                              <Sequence sap2010:Annotation.AnnotationText="#'RPA 결과' 열에 '처리완료' 표시 없으면 아래 액티비티 실행" DisplayName="Else" sap:VirtualizedContainerService.HintSize="1033.6,1604.8" sap2010:WorkflowViewState.IdRef="Sequence_152">
+                                              <Sequence sap2010:Annotation.AnnotationText="#'RPA 결과' 열에 '처리완료' 표시 없으면 아래 액티비티 실행" DisplayName="Else" sap:VirtualizedContainerService.HintSize="1033.6,1568.8" sap2010:WorkflowViewState.IdRef="Sequence_152">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <uix:NApplicationCard sap2010:Annotation.AnnotationText="#'다운로드' 열의 URL 클릭 시 나타나는 파일 저장" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application - 다른 이름으로 저장" sap:VirtualizedContainerService.HintSize="1000,1513.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_10" InteractionMode="WindowMessages" OpenMode="IfNotOpen" ScopeGuid="5a2c9ba1-afc4-4aab-866e-a8098f869f2a" Version="V2">
+                                                <uix:NApplicationCard sap2010:Annotation.AnnotationText="#'다운로드' 열의 URL 클릭 시 나타나는 파일 저장" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application - 다른 이름으로 저장" sap:VirtualizedContainerService.HintSize="1000,1477.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_10" OpenMode="IfNotOpen" ScopeGuid="5a2c9ba1-afc4-4aab-866e-a8098f869f2a" Version="V2">
                                                   <uix:NApplicationCard.Body>
                                                     <ActivityAction x:TypeArguments="x:Object">
                                                       <ActivityAction.Argument>
@@ -1973,26 +1965,16 @@
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="966.4,1168" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                                      <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="966.4,1132" sap2010:WorkflowViewState.IdRef="Sequence_19">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="#'다운로드 경로'에 Data Table '파일명'으로 저장" ClickBeforeMode="Single" DisplayName="Type into - 다운로드 경로 및 제목 지정" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,317.6" sap2010:WorkflowViewState.IdRef="NTypeInto_9" InteractionMode="HardwareEvents" ScopeIdentifier="5a2c9ba1-afc4-4aab-866e-a8098f869f2a" Text="[&quot;C:\Users\user\Desktop&quot; + &quot;\&quot; + &quot;RPA&quot; + &quot;\&quot; + CurrentRow(&quot;파일명&quot;).ToString + &quot;.csv&quot;]" Version="V4">
+                                                        <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="#'다운로드 경로'에 Data Table '파일명'으로 저장" ClickBeforeMode="Single" DisplayName="Type into - 다운로드 경로 및 제목 지정" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,281.6" sap2010:WorkflowViewState.IdRef="NTypeInto_9" InteractionMode="HardwareEvents" ScopeIdentifier="5a2c9ba1-afc4-4aab-866e-a8098f869f2a" Text="[&quot;C:\Users\user\Desktop&quot; + &quot;\&quot; + &quot;RPA&quot; + &quot;\&quot; + CurrentRow(&quot;파일명&quot;).ToString + &quot;.csv&quot;]" Version="V4">
                                                           <uix:NTypeInto.Target>
                                                             <uix:TargetAnchorable BrowserURL="" DesignTimeRectangle="169, 464, 967, 22" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;wnd aaname='탐색 창' cls='DirectUIHWND' /&gt;&lt;wnd aaname='파일 이름:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='탐색 창' cls='DirectUIHWND' /&gt;&lt;wnd aaname='파일 이름:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="c1d2bda1-f088-4b33-a262-690a2bea3d16" InformativeScreenshot="d3f6f39b7b8964cdb77bede5785804fc.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='다른 이름으로 저장' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
                                                           </uix:NTypeInto.Target>
-                                                          <uix:NTypeInto.VerifyOptions>
-                                                            <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                                                              <uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                                <InArgument x:TypeArguments="x:Boolean" />
-                                                              </uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                              <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                                <InArgument x:TypeArguments="x:Double" />
-                                                              </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                            </uix:VerifyExecutionTypeIntoOptions>
-                                                          </uix:NTypeInto.VerifyOptions>
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -3201,7 +3183,7 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:ForEachRow>
                                   </Sequence>
-                                  <uga:GSuiteApplicationScope ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" BucketId="{x:Null}" BucketName="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" SecureCredentialSecret="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" Account="smbaek@spigen.com" AuthenticationType="ServiceAccountKey" BucketInputMode="Browse" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="1216,1618.4" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_6" KeyPath="[Str_key경로]" KeyType="JSON" OAuthClient="UIPATH" Password="notasecret" RuntimeItemInputMode="Browse" ServiceAccountEmail="rpa-62@meetingroom-display-403101.iam.gserviceaccount.com" Services="Unselected" UseConnectionService="False" User="7753D998">
+                                  <uga:GSuiteApplicationScope ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" BucketId="{x:Null}" BucketName="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" SecureCredentialSecret="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" Account="smbaek@spigen.com" AuthenticationType="ServiceAccountKey" BucketInputMode="Browse" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="1216,571.2" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_6" KeyPath="[Str_key경로]" KeyType="JSON" OAuthClient="UIPATH" Password="notasecret" RuntimeItemInputMode="Browse" ServiceAccountEmail="rpa-62@meetingroom-display-403101.iam.gserviceaccount.com" Services="Unselected" UseConnectionService="False" User="7753D998">
                                     <uga:GSuiteApplicationScope.AuthenticationScopes>
                                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                     </uga:GSuiteApplicationScope.AuthenticationScopes>
@@ -3242,6 +3224,7 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                   </uga:GSuiteApplicationScope>
                                 </Sequence>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1249.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;행 &quot; + Int_행번호.ToString + &quot; 처리 완료&quot;]" />
                               </Sequence>
                             </ActivityAction>
                           </ui:ForEachRow.Body>
