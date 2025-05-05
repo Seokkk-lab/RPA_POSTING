@@ -166,7 +166,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <ueab:SequenceX DisplayName="Single Excel Process Scope" sap:VirtualizedContainerService.HintSize="2180,27875.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <ueab:SequenceX DisplayName="Single Excel Process Scope" sap:VirtualizedContainerService.HintSize="1518.4,33367.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <ueab:SequenceX.Variables>
       <Variable x:TypeArguments="ue:IWorkbookQuickHandle" Default="[new WorkbookQuickHandle(workbookPath:=&quot;Project_Notebook.xlsx&quot;,visible:=True,autoSave:=False,createNew:=True,readOnly:=False,isWorkspace:=True)]" Name="참고사항" />
       <Variable x:TypeArguments="ui:PasswordCredentials" Name="UNI_자격증명" />
@@ -212,6 +212,9 @@
       <Variable x:TypeArguments="x:String" Name="Str_공급자명" />
       <Variable x:TypeArguments="x:String" Name="Str_행번호" />
       <Variable x:TypeArguments="x:String" Name="Str_다운로드링크" />
+      <Variable x:TypeArguments="sd:DataTable" Name="Dt_확인용" />
+      <Variable x:TypeArguments="sd:DataTable" Name="Dt_미처리항목" />
+      <Variable x:TypeArguments="x:Boolean" Name="IsComplete" />
     </ueab:SequenceX.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -253,7 +256,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:GetEnvironmentFolder>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="#로그인 시도, 로그인 되어 있을 경우 로그아웃 이후 계정 정보 활용해서 다시 로그인" DisplayName="유니도큐 로그인" sap:VirtualizedContainerService.HintSize="1518.4,2080" sap2010:WorkflowViewState.IdRef="Sequence_174">
+    <Sequence sap2010:Annotation.AnnotationText="#로그인 시도, 로그인 되어 있을 경우 로그아웃 이후 계정 정보 활용해서 다시 로그인" DisplayName="유니도큐 로그인" sap:VirtualizedContainerService.HintSize="1518.4,2073.6" sap2010:WorkflowViewState.IdRef="Sequence_174">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -261,14 +264,14 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch sap2010:Annotation.AnnotationText="로그인 시도 시 5초 간격으로 3번 재시도" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1036.8,1956.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch sap2010:Annotation.AnnotationText="로그인 시도 시 5초 간격으로 3번 재시도" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1036.8,1950.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Try>
-          <uix:NApplicationCard sap2010:Annotation.AnnotationText="#유니도큐 창 띄우기 및 로그인" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: SPIGEN UNIDOCU" sap:VirtualizedContainerService.HintSize="1000,1671.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_14" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Timeout="30" Version="V2">
+          <uix:NApplicationCard sap2010:Annotation.AnnotationText="#유니도큐 창 띄우기 및 로그인" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: SPIGEN UNIDOCU" sap:VirtualizedContainerService.HintSize="1000,1664.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_14" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Timeout="30" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -279,13 +282,13 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="966.4,1423.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="966.4,1416.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState sap2010:Annotation.AnnotationText="#로그인 버튼으로 타겟 판단" DisplayName="Check App State '로그인'" sap:VirtualizedContainerService.HintSize="952,1134.4" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
+                  <uix:NCheckState sap2010:Annotation.AnnotationText="#로그인 버튼으로 타겟 판단" DisplayName="Check App State '로그인'" sap:VirtualizedContainerService.HintSize="952,1131.2" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="타겟이 나타남" sap:VirtualizedContainerService.HintSize="449.6,627.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <sap:WorkflowViewStateService.ViewState>
@@ -326,7 +329,7 @@
                       </Sequence>
                     </uix:NCheckState.IfExists>
                     <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="449.6,852.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="449.6,849.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -367,7 +370,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </uix:NTypeInto>
-                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into_비밀번호" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,279.2" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Text="[UNI_자격증명.Password]" Version="V4">
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into_비밀번호" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,277.6" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Text="[UNI_자격증명.Password]" Version="V4">
                           <uix:NTypeInto.Target>
                             <uix:TargetAnchorable BrowserURL="eacc.spigen.com/main/view" DesignTimeRectangle="370, 696, 217, 50" DesignTimeScaleFactor="1.25" ElementType="InputBoxPassword" FuzzySelectorArgument="&lt;webctrl id='PW' tag='INPUT' type='password' class='login-input' placeholder='비밀번호' aaname='' /&gt;" Guid="fa4e72f7-0d37-4b6a-808e-a7b7c6d880aa" InformativeScreenshot="c7aec29b0a43f6a338b82bf4322d9fbf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
                           </uix:NTypeInto.Target>
@@ -395,7 +398,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="#로그인 버튼 클릭" ClickType="Single" DisplayName="'로그인' 버튼 클릭" sap:VirtualizedContainerService.HintSize="952,249.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
+                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="#로그인 버튼 클릭" ClickType="Single" DisplayName="'로그인' 버튼 클릭" sap:VirtualizedContainerService.HintSize="952,248" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V4">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="eacc.spigen.com/main/view" DesignTimeRectangle="576, 644, 113, 104" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='login-button' tag='BUTTON' type='' class='NGB' aaname='로그인' check:innerText='로그인' /&gt;" Guid="8029b299-0cc6-406b-86d1-5134fa57517f" InformativeScreenshot="bff946e9a42c91a197a1c98622a91805.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='2' title='SPIGEN UNIDOCU' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -1023,9 +1026,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:MultipleAssign sap2010:Annotation.AnnotationText="#다운로드경로 지정&amp;지원팀 시트 ID 변수 지정" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1518.4,368" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="#다운로드경로 지정&amp;지원팀 시트 ID 변수 지정" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1518.4,460.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
       <ui:MultipleAssign.AssignOperations>
-        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">[Str_지원팀전표시트ID]</OutArgument>
@@ -1082,6 +1085,30 @@
               <InArgument x:TypeArguments="x:Int32">0</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="sd:DataTable">[Dt_확인용]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="sd:DataTable">[New DataTable]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="sd:DataTable">[Dt_미처리항목]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="sd:DataTable">[New DataTable]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_24">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Boolean">[IsComplete]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
       <sap:WorkflowViewStateService.ViewState>
@@ -1092,9 +1119,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[Bool_처리필요 = true]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1518.4,24325.6" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[Bool_처리필요 = true]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1518.4,29731.2" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1484.8,24045.6" sap2010:WorkflowViewState.IdRef="Sequence_181">
+        <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1484.8,29451.2" sap2010:WorkflowViewState.IdRef="Sequence_181">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1108,7 +1135,7 @@
               <InArgument x:TypeArguments="x:Boolean">False</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each TabName" sap:VirtualizedContainerService.HintSize="1451.2,23872" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Str_TabList]">
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each TabName" sap:VirtualizedContainerService.HintSize="1451.2,29277.6" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Str_TabList]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:String">
                 <ActivityAction.Argument>
@@ -1119,7 +1146,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1417.6,23445.6" sap2010:WorkflowViewState.IdRef="Sequence_182">
+                <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1417.6,28851.2" sap2010:WorkflowViewState.IdRef="Sequence_182">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1188,20 +1215,20 @@
                       </scg:List>
                     </ui:FilterDataTable.SelectColumns>
                   </ui:FilterDataTable>
-                  <If Condition="[Dt_필요정보.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="1384,22219.2" sap2010:WorkflowViewState.IdRef="If_18">
+                  <If Condition="[Dt_필요정보.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="1384,25836" sap2010:WorkflowViewState.IdRef="If_18">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1350.4,21959.2" sap2010:WorkflowViewState.IdRef="Sequence_184">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1350.4,25576" sap2010:WorkflowViewState.IdRef="Sequence_184">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[Int_행번호]" DataTable="[Dt_필요정보]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1316.8,21899.2" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
+                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[Int_행번호]" DataTable="[Dt_필요정보]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1316.8,25516" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
@@ -1212,7 +1239,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1283.2,21524.8" sap2010:WorkflowViewState.IdRef="Sequence_186">
+                              <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1283.2,25141.6" sap2010:WorkflowViewState.IdRef="Sequence_186">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="ui:UiElement" Name="Browser_세금계산서" />
                                 </Sequence.Variables>
@@ -1221,7 +1248,29 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <If Condition="[TabName = &quot;세금계산서_변동비&quot;]" sap:VirtualizedContainerService.HintSize="1249.6,6247.2" sap2010:WorkflowViewState.IdRef="If_19">
+                                <If Condition="[Not String.IsNullOrEmpty(CurrentRow(&quot;RPA 결과&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="1249.6,542.4" sap2010:WorkflowViewState.IdRef="If_23">
+                                  <If.Then>
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,282.4" sap2010:WorkflowViewState.IdRef="Sequence_228">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;이미 처리된 항목: &quot; + CurrentRow(&quot;사업장명&quot;).ToString + &quot;. 결과: &quot; + CurrentRow(&quot;RPA 결과&quot;).ToString]" />
+                                      <ui:Continue sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="Continue_2" />
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_229">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                                <If Condition="[TabName = &quot;세금계산서_변동비&quot;]" sap:VirtualizedContainerService.HintSize="1249.6,7316" sap2010:WorkflowViewState.IdRef="If_19">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1229,7 +1278,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <If.Then>
-                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="736,5987.2" sap2010:WorkflowViewState.IdRef="Sequence_187">
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="736,7056" sap2010:WorkflowViewState.IdRef="Sequence_187">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1738,7 +1787,7 @@
                                           </Catch>
                                         </TryCatch.Catches>
                                       </TryCatch>
-                                      <uga:GSuiteApplicationScope ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" BucketId="{x:Null}" BucketName="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" KeyPath="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" Account="smbaek@spigen.com" sap2010:Annotation.AnnotationText="#3.2.1.2.2와 4.2.1.1.2 액티비티에서 추출한 데이터 업체별 시트 '금액' 열에 입력" AuthenticationType="OAuthClientID" BucketInputMode="Browse" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="702.4,602.4" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_10" KeyType="JSON" OAuthClient="UIPATH" Password="notasecret" RuntimeItemInputMode="Browse" Services="Unselected" UseConnectionService="False" User="7753D998">
+                                      <uga:GSuiteApplicationScope ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" BucketId="{x:Null}" BucketName="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" SecureCredentialSecret="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" Account="smbaek@spigen.com" sap2010:Annotation.AnnotationText="#3.2.1.2.2와 4.2.1.1.2 액티비티에서 추출한 데이터 업체별 시트 '금액' 열에 입력" AuthenticationType="ServiceAccountKey" BucketInputMode="Browse" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="702.4,1671.2" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_10" KeyPath="[Str_key경로]" KeyType="JSON" OAuthClient="UIPATH" Password="notasecret" RuntimeItemInputMode="Browse" ServiceAccountEmail="rpa-62@meetingroom-display-403101.iam.gserviceaccount.com" Services="Unselected" UseConnectionService="False" User="7753D998">
                                         <uga:GSuiteApplicationScope.AuthenticationScopes>
                                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                         </uga:GSuiteApplicationScope.AuthenticationScopes>
@@ -1792,7 +1841,7 @@
                                     </Sequence>
                                   </If.Else>
                                 </If>
-                                <Sequence sap2010:Annotation.AnnotationText="" DisplayName="시트 자료 바탕으로 csv 생성&amp;업로드" sap:VirtualizedContainerService.HintSize="1249.6,15217.6" sap2010:WorkflowViewState.IdRef="Sequence_201">
+                                <Sequence sap2010:Annotation.AnnotationText="" DisplayName="시트 자료 바탕으로 csv 생성&amp;업로드" sap:VirtualizedContainerService.HintSize="1249.6,17223.2" sap2010:WorkflowViewState.IdRef="Sequence_201">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1870,7 +1919,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:FilterDataTable>
-                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="#Data Table 항목을 순차적으로 검색" DataTable="[Dt_공급가액입력자료_필요정보]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1216,2560" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
+                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="#Data Table 항목을 순차적으로 검색" DataTable="[Dt_공급가액입력자료_필요정보]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1216,2361.6" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
                                     <ui:ForEachRow.Body>
                                       <ActivityAction x:TypeArguments="sd:DataRow">
                                         <ActivityAction.Argument>
@@ -1881,14 +1930,14 @@
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1100.8,2145.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                        <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1100.8,1947.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <If sap2010:Annotation.AnnotationText="#'RPA 결과' 열에 '처리완료' 표시 탐색 " Condition="[CurrentRow(&quot;RPA 결과&quot;).ToString.Contains(&quot;RPA처리완료&quot;)]" sap:VirtualizedContainerService.HintSize="1067.2,2085.6" sap2010:WorkflowViewState.IdRef="If_15">
+                                          <If sap2010:Annotation.AnnotationText="#'RPA 결과' 열에 '처리완료' 표시 탐색 " Condition="[CurrentRow(&quot;RPA 결과&quot;).ToString.Contains(&quot;RPA처리완료&quot;)]" sap:VirtualizedContainerService.HintSize="1067.2,1887.2" sap2010:WorkflowViewState.IdRef="If_15">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1897,45 +1946,22 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <If.Then>
-                                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_151">
+                                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_151">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:Continue sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="Continue_1" />
                                               </Sequence>
                                             </If.Then>
                                             <If.Else>
-                                              <Sequence sap2010:Annotation.AnnotationText="#'RPA 결과' 열에 '처리완료' 표시 없으면 아래 액티비티 실행" DisplayName="Else" sap:VirtualizedContainerService.HintSize="1033.6,1784.8" sap2010:WorkflowViewState.IdRef="Sequence_152">
+                                              <Sequence sap2010:Annotation.AnnotationText="#'RPA 결과' 열에 '처리완료' 표시 없으면 아래 액티비티 실행" DisplayName="Else" sap:VirtualizedContainerService.HintSize="1033.6,1604.8" sap2010:WorkflowViewState.IdRef="Sequence_152">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1000,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_13">
-                                                  <ui:MultipleAssign.AssignOperations>
-                                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
-                                                        <ui:AssignOperation.To>
-                                                          <OutArgument x:TypeArguments="x:String">[Str_다운로드링크]</OutArgument>
-                                                        </ui:AssignOperation.To>
-                                                        <ui:AssignOperation.Value>
-                                                          <InArgument x:TypeArguments="x:String">[CurrentRow("다운로드").ToString]</InArgument>
-                                                        </ui:AssignOperation.Value>
-                                                      </ui:AssignOperation>
-                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
-                                                        <ui:AssignOperation.To>
-                                                          <OutArgument x:TypeArguments="x:String">[Str_공급자명]</OutArgument>
-                                                        </ui:AssignOperation.To>
-                                                        <ui:AssignOperation.Value>
-                                                          <InArgument x:TypeArguments="x:String">[CurrentRow("사업장명").ToString]</InArgument>
-                                                        </ui:AssignOperation.Value>
-                                                      </ui:AssignOperation>
-                                                    </scg:List>
-                                                  </ui:MultipleAssign.AssignOperations>
-                                                </ui:MultipleAssign>
                                                 <uix:NApplicationCard sap2010:Annotation.AnnotationText="#'다운로드' 열의 URL 클릭 시 나타나는 파일 저장" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application - 다른 이름으로 저장" sap:VirtualizedContainerService.HintSize="1000,1513.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_10" InteractionMode="WindowMessages" OpenMode="IfNotOpen" ScopeGuid="5a2c9ba1-afc4-4aab-866e-a8098f869f2a" Version="V2">
                                                   <uix:NApplicationCard.Body>
                                                     <ActivityAction x:TypeArguments="x:Object">
@@ -1953,7 +1979,7 @@
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="#'다운로드 경로'에 Data Table '파일명'으로 저장" ClickBeforeMode="Single" DisplayName="Type into - 다운로드 경로 및 제목 지정" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,317.6" sap2010:WorkflowViewState.IdRef="NTypeInto_9" InteractionMode="HardwareEvents" ScopeIdentifier="5a2c9ba1-afc4-4aab-866e-a8098f869f2a" Text="[&quot;C:\Users\user\Desktop&quot; + &quot;\&quot; + &quot;RPA&quot; + &quot;\&quot; + Str_공급자명 + &quot;.csv&quot;]" Version="V4">
+                                                        <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="#'다운로드 경로'에 Data Table '파일명'으로 저장" ClickBeforeMode="Single" DisplayName="Type into - 다운로드 경로 및 제목 지정" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,317.6" sap2010:WorkflowViewState.IdRef="NTypeInto_9" InteractionMode="HardwareEvents" ScopeIdentifier="5a2c9ba1-afc4-4aab-866e-a8098f869f2a" Text="[&quot;C:\Users\user\Desktop&quot; + &quot;\&quot; + &quot;RPA&quot; + &quot;\&quot; + CurrentRow(&quot;파일명&quot;).ToString + &quot;.csv&quot;]" Version="V4">
                                                           <uix:NTypeInto.Target>
                                                             <uix:TargetAnchorable BrowserURL="" DesignTimeRectangle="169, 464, 967, 22" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;wnd aaname='탐색 창' cls='DirectUIHWND' /&gt;&lt;wnd aaname='파일 이름:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='탐색 창' cls='DirectUIHWND' /&gt;&lt;wnd aaname='파일 이름:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="c1d2bda1-f088-4b33-a262-690a2bea3d16" InformativeScreenshot="d3f6f39b7b8964cdb77bede5785804fc.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='다른 이름으로 저장' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
                                                           </uix:NTypeInto.Target>
@@ -2089,7 +2115,7 @@
                                                     </ActivityAction>
                                                   </uix:NApplicationCard.Body>
                                                   <uix:NApplicationCard.TargetApp>
-                                                    <uix:TargetApp Area="518, 328, 1175, 610" Arguments="[Str_다운로드링크]" IconBase64="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" InformativeScreenshot="604f5ebb68316af74db2f23a075a7bec.png" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='다른 이름으로 저장' /&gt;" Title="다른 이름으로 저장" Version="V1">
+                                                    <uix:TargetApp Area="518, 328, 1175, 610" Arguments="[CurrentRow(&quot;다운로드&quot;).ToString]" IconBase64="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" InformativeScreenshot="604f5ebb68316af74db2f23a075a7bec.png" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='다른 이름으로 저장' /&gt;" Title="다른 이름으로 저장" Version="V1">
                                                       <uix:TargetApp.FilePath>
                                                         <InArgument x:TypeArguments="x:String">
                                                           <sap:WorkflowViewStateService.ViewState>
@@ -2134,7 +2160,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:ForEachRow>
-                                  <Sequence sap2010:Annotation.AnnotationText="#다운로드 항목 유니도큐 업로드" DisplayName="csv 업로드" sap:VirtualizedContainerService.HintSize="1216,11136" sap2010:WorkflowViewState.IdRef="Sequence_158">
+                                  <Sequence sap2010:Annotation.AnnotationText="#다운로드 항목 유니도큐 업로드" DisplayName="csv 업로드" sap:VirtualizedContainerService.HintSize="1216,12271.2" sap2010:WorkflowViewState.IdRef="Sequence_158">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2142,7 +2168,7 @@
                                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[Int_행번호]" DataTable="[Dt_공급가액입력자료_필요정보]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1182.4,11012.8" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+                                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[Int_행번호]" DataTable="[Dt_공급가액입력자료_필요정보]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1182.4,12148" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
                                       <ui:ForEachRow.Body>
                                         <ActivityAction x:TypeArguments="sd:DataRow">
                                           <ActivityAction.Argument>
@@ -2153,27 +2179,27 @@
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1148.8,10638.4" sap2010:WorkflowViewState.IdRef="Sequence_104">
+                                          <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="1148.8,11773.6" sap2010:WorkflowViewState.IdRef="Sequence_104">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <If Condition="[string.IsNullOrEmpty(CurrentRow(&quot;RPA 결과&quot;).ToString) = true]" sap:VirtualizedContainerService.HintSize="1115.2,10578.4" sap2010:WorkflowViewState.IdRef="If_17">
+                                            <If Condition="[string.IsNullOrEmpty(CurrentRow(&quot;RPA 결과&quot;).ToString) = true]" sap:VirtualizedContainerService.HintSize="1115.2,11713.6" sap2010:WorkflowViewState.IdRef="If_17">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <If.Then>
-                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1081.6,10327.2" sap2010:WorkflowViewState.IdRef="Sequence_176">
+                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1081.6,11462.4" sap2010:WorkflowViewState.IdRef="Sequence_176">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <uix:NApplicationCard sap2010:Annotation.AnnotationText="#유니도큐 '세금계산서 정산' 연결 링크 오픈" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: 세금계산서 정산" sap:VirtualizedContainerService.HintSize="1048,10267.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_30" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V2">
+                                                  <uix:NApplicationCard sap2010:Annotation.AnnotationText="#유니도큐 '세금계산서 정산' 연결 링크 오픈" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: 세금계산서 정산" sap:VirtualizedContainerService.HintSize="1048,11402.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_30" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="ef776cc1-34ca-4fd5-aba5-303d0a04ead9" Version="V2">
                                                     <uix:NApplicationCard.Body>
                                                       <ActivityAction x:TypeArguments="x:Object">
                                                         <ActivityAction.Argument>
@@ -2184,7 +2210,7 @@
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="1014.4,9996" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                                        <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="1014.4,11131.2" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2198,7 +2224,7 @@
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
                                                           </uix:NGoToUrl>
-                                                          <Sequence sap2010:Annotation.AnnotationText="유니도큐 '세금계산서 정산' 화면에서 '사업장명' 검색" DisplayName="ClickSearchButton" sap:VirtualizedContainerService.HintSize="1000,4416" sap2010:WorkflowViewState.IdRef="Sequence_213">
+                                                          <Sequence sap2010:Annotation.AnnotationText="유니도큐 '세금계산서 정산' 화면에서 '사업장명' 검색" DisplayName="ClickSearchButton" sap:VirtualizedContainerService.HintSize="1000,5551.2" sap2010:WorkflowViewState.IdRef="Sequence_213">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2219,9 +2245,9 @@
                                                                 </scg:List>
                                                               </ui:MultipleAssign.AssignOperations>
                                                             </ui:MultipleAssign>
-                                                            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="635.2,4141.6" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                                                            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="635.2,5276.8" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                                                               <TryCatch.Try>
-                                                                <Sequence DisplayName="그룹" sap:VirtualizedContainerService.HintSize="598.4,3885.6" sap2010:WorkflowViewState.IdRef="Sequence_216">
+                                                                <Sequence DisplayName="그룹" sap:VirtualizedContainerService.HintSize="598.4,5020.8" sap2010:WorkflowViewState.IdRef="Sequence_216">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2383,7 +2409,7 @@
                                                                       </scg:List>
                                                                     </ui:MultipleAssign.AssignOperations>
                                                                   </ui:MultipleAssign>
-                                                                  <If sap2010:Annotation.AnnotationText="#'처리담당자'의 row count에 따른 항목 변경&#xA;#'부서'를 클릭했는데 0이면, '사업장' 클릭&#xA;#'세금계산서 정산' 페이지의 '처리담당자' 기본값 = '본인'" Condition="[CInt(Str_CountNumber) = 0]" DisplayName="If" sap:VirtualizedContainerService.HintSize="584,2558.4" sap2010:WorkflowViewState.IdRef="If_21">
+                                                                  <If sap2010:Annotation.AnnotationText="#'처리담당자'의 row count에 따른 항목 변경&#xA;#'부서'를 클릭했는데 0이면, '사업장' 클릭&#xA;#'세금계산서 정산' 페이지의 '처리담당자' 기본값 = '본인'" Condition="[CInt(Str_CountNumber) = 0]" DisplayName="If" sap:VirtualizedContainerService.HintSize="584,3693.6" sap2010:WorkflowViewState.IdRef="If_21">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2392,7 +2418,7 @@
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                     <If.Then>
-                                                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="550.4,2245.6" sap2010:WorkflowViewState.IdRef="Sequence_214">
+                                                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="550.4,3380.8" sap2010:WorkflowViewState.IdRef="Sequence_214">
                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2508,16 +2534,16 @@
                                                                             </scg:List>
                                                                           </ui:MultipleAssign.AssignOperations>
                                                                         </ui:MultipleAssign>
-                                                                        <If Condition="[CInt(Str_CountNumber) = 0]" sap:VirtualizedContainerService.HintSize="516.8,1039.2" sap2010:WorkflowViewState.IdRef="If_22">
+                                                                        <If Condition="[CInt(Str_CountNumber) = 0]" sap:VirtualizedContainerService.HintSize="516.8,2174.4" sap2010:WorkflowViewState.IdRef="If_22">
                                                                           <If.Then>
-                                                                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="483.2,788" sap2010:WorkflowViewState.IdRef="Sequence_225">
+                                                                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="483.2,1923.2" sap2010:WorkflowViewState.IdRef="Sequence_225">
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
                                                                               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Warn" Message="[&quot;'&quot; + Str_공급자명 + &quot;' 에 대한 계산서가 없습니다.&quot;]" />
-                                                                              <uga:GSuiteApplicationScope ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" BucketId="{x:Null}" BucketName="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" KeyPath="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" Account="smbaek@spigen.com" AuthenticationType="OAuthClientID" BucketInputMode="Browse" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="449.6,552" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_12" KeyType="JSON" OAuthClient="UIPATH" Password="notasecret" RuntimeItemInputMode="Browse" Services="Unselected" UseConnectionService="False" User="7753D998">
+                                                                              <uga:GSuiteApplicationScope ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" BucketId="{x:Null}" BucketName="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" SecureCredentialSecret="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" Account="smbaek@spigen.com" AuthenticationType="ServiceAccountKey" BucketInputMode="Browse" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="449.6,1639.2" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_12" KeyPath="[Str_key경로]" KeyType="JSON" OAuthClient="UIPATH" Password="notasecret" RuntimeItemInputMode="Browse" ServiceAccountEmail="rpa-62@meetingroom-display-403101.iam.gserviceaccount.com" Services="Unselected" UseConnectionService="False" User="7753D998">
                                                                                 <uga:GSuiteApplicationScope.AuthenticationScopes>
                                                                                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                                                 </uga:GSuiteApplicationScope.AuthenticationScopes>
@@ -2551,6 +2577,7 @@
                                                                                   </usau1:BackupSlot>
                                                                                 </uga:GSuiteApplicationScope.RuntimeItemFullPathBackup>
                                                                               </uga:GSuiteApplicationScope>
+                                                                              <ui:Continue sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="Continue_3" />
                                                                             </Sequence>
                                                                           </If.Then>
                                                                           <If.Else>
@@ -3174,7 +3201,7 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:ForEachRow>
                                   </Sequence>
-                                  <uga:GSuiteApplicationScope ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" BucketId="{x:Null}" BucketName="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" KeyPath="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" Account="smbaek@spigen.com" AuthenticationType="OAuthClientID" BucketInputMode="Browse" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="1216,549.6" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_6" KeyType="JSON" OAuthClient="UIPATH" Password="notasecret" RuntimeItemInputMode="Browse" Services="Unselected" UseConnectionService="False" User="7753D998">
+                                  <uga:GSuiteApplicationScope ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" BucketId="{x:Null}" BucketName="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" SecureCredentialSecret="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" Account="smbaek@spigen.com" AuthenticationType="ServiceAccountKey" BucketInputMode="Browse" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="1216,1618.4" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_6" KeyPath="[Str_key경로]" KeyType="JSON" OAuthClient="UIPATH" Password="notasecret" RuntimeItemInputMode="Browse" ServiceAccountEmail="rpa-62@meetingroom-display-403101.iam.gserviceaccount.com" Services="Unselected" UseConnectionService="False" User="7753D998">
                                     <uga:GSuiteApplicationScope.AuthenticationScopes>
                                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                     </uga:GSuiteApplicationScope.AuthenticationScopes>
@@ -3236,7 +3263,119 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1384,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;===== '&quot; + TabName + &quot;' 처리 완료 =====&quot;]" />
+                  <Sequence DisplayName="탭 처리 완료 확인" sap:VirtualizedContainerService.HintSize="1384,1954.4" sap2010:WorkflowViewState.IdRef="Sequence_231">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uga:GSuiteApplicationScope ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" BucketId="{x:Null}" BucketName="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" SecureCredentialSecret="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" Account="smbaek@spigen.com" AuthenticationType="ServiceAccountKey" BucketInputMode="Browse" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="635.2,1871.2" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_14" KeyPath="[Str_key경로]" KeyType="JSON" OAuthClient="UIPATH" Password="notasecret" RuntimeItemInputMode="Browse" ServiceAccountEmail="rpa-62@meetingroom-display-403101.iam.gserviceaccount.com" Services="Unselected" UseConnectionService="False" User="7753D998">
+                      <uga:GSuiteApplicationScope.AuthenticationScopes>
+                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                      </uga:GSuiteApplicationScope.AuthenticationScopes>
+                      <uga:GSuiteApplicationScope.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="GSuiteScope" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="601.6,1576" sap2010:WorkflowViewState.IdRef="Sequence_232">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uga:ReadRange ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" AuthScopesInvalid="False" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="568,245.6" sap2010:WorkflowViewState.IdRef="ReadRange_4" IncludeHeaders="True" Range="A7:AB9999" Result="[Dt_확인용]" SheetName="[TabName]" SpreadsheetId="[Str_지원팀전표시트ID]" />
+                            <ui:FilterDataTable DataTable="[Dt_확인용]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="568,194.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_8" OutputDataTable="[Dt_미처리항목]" SelectColumnsMode="Keep">
+                              <ui:FilterDataTable.Filters>
+                                <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                  <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
+                                    <ui:FilterOperationArgument.Column>
+                                      <InArgument x:TypeArguments="x:String">["RPA 결과"]</InArgument>
+                                    </ui:FilterOperationArgument.Column>
+                                  </ui:FilterOperationArgument>
+                                </scg:List>
+                              </ui:FilterDataTable.Filters>
+                              <ui:FilterDataTable.SelectColumns>
+                                <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                  <x:Null />
+                                </scg:List>
+                              </ui:FilterDataTable.SelectColumns>
+                            </ui:FilterDataTable>
+                            <If Condition="[Dt_미처리항목.Rows.Count = 0]" sap:VirtualizedContainerService.HintSize="568,1076" sap2010:WorkflowViewState.IdRef="If_24">
+                              <If.Then>
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="534.4,824.8" sap2010:WorkflowViewState.IdRef="Sequence_233">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="500.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;===== '&quot; + TabName + &quot;' 처리 완료 =====&quot;]" />
+                                  <If Condition="[Array.IndexOf(Str_TabList, TabName) = Str_TabList.Length - 1]" sap:VirtualizedContainerService.HintSize="500.8,590.4" sap2010:WorkflowViewState.IdRef="If_25">
+                                    <If.Then>
+                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,339.2" sap2010:WorkflowViewState.IdRef="Sequence_235">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign DisplayName="Set Variable Value" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:Boolean">[Bool_처리필요]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;모든 탭 처리 완료&quot;]" />
+                                      </Sequence>
+                                    </If.Then>
+                                    <If.Else>
+                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_236">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </Sequence>
+                                    </If.Else>
+                                  </If>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_234">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </ActivityAction>
+                      </uga:GSuiteApplicationScope.Body>
+                      <uga:GSuiteApplicationScope.BucketFullPathBackup>
+                        <usau1:BackupSlot x:TypeArguments="ugade:EDriveItemMode" StoredValue="Browse">
+                          <usau1:BackupSlot.BackupValues>
+                            <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                          </usau1:BackupSlot.BackupValues>
+                        </usau1:BackupSlot>
+                      </uga:GSuiteApplicationScope.BucketFullPathBackup>
+                      <uga:GSuiteApplicationScope.RuntimeItemFullPathBackup>
+                        <usau1:BackupSlot x:TypeArguments="ugade:EDriveItemMode" StoredValue="{x:Null}">
+                          <usau1:BackupSlot.BackupValues>
+                            <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                          </usau1:BackupSlot.BackupValues>
+                        </usau1:BackupSlot>
+                      </uga:GSuiteApplicationScope.RuntimeItemFullPathBackup>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uga:GSuiteApplicationScope>
+                  </Sequence>
                 </Sequence>
               </ActivityAction>
             </ui:ForEach.Body>
